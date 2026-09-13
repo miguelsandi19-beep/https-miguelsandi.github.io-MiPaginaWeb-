@@ -50,8 +50,16 @@ h2 { color: var(--marino); font-size: clamp(2rem, 4vw, 3.2rem); }
 .tarjeta-destacada h3 { color: var(--blanco); }
 .tarjeta p { color: #496579; max-width: 450px; }
 .tarjeta-destacada p { color: #c8dce8; }
-.tarjeta a { color: var(--marino-claro); font-size: 13px; font-weight: bold; text-decoration: none; }
-.tarjeta-destacada a { color: var(--azul); }
+.boton-detalle { background: transparent; border: 0; color: var(--marino-claro); cursor: pointer; font: inherit; font-size: 13px; font-weight: bold; padding: 12px 0 0; text-align: left; }
+.boton-detalle span { display: inline-block; margin-left: 5px; transition: transform 0.35s ease; }
+.tarjeta-destacada .boton-detalle { color: var(--azul); }
+.tarjeta.abierta .boton-detalle span { transform: rotate(180deg); }
+.detalle { max-height: 0; opacity: 0; overflow: hidden; transform: translateY(-8px); transition: max-height 0.55s ease, opacity 0.35s ease, transform 0.55s ease, margin-top 0.55s ease; }
+.tarjeta.abierta .detalle { max-height: 280px; margin-top: 22px; opacity: 1; transform: translateY(0); }
+.detalle-media { align-items: center; background: linear-gradient(135deg, #c7e2ec, #eef7f9); border: 1px dashed #5798bd; color: #397da9; display: flex; font-size: 12px; height: 105px; justify-content: center; letter-spacing: 1px; margin-bottom: 12px; text-align: center; }
+.detalle p { color: #496579; font-size: 13px; }
+.tarjeta-destacada .detalle-media { background: rgb(92 169 214 / 15%); border-color: var(--azul); }
+.tarjeta-destacada .detalle p { color: #c8dce8; }
 
 .perfil { align-items: center; background: #dcebf1; display: grid; gap: 70px; grid-template-columns: 1fr 1fr; padding: 85px 12%; }
 .perfil > p { color: #3f5b6d; font-size: 17px; max-width: 500px; }
